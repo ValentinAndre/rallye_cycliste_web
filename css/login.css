@@ -1,0 +1,16 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image:url(../img/fond.jpg);
+  background-attachment: fixed ;
+  background-repeat: no-repeat ;
+  background-size:cover ;
+}
+
+.vertical-offset-100 {
+    padding-top:100px;
+}
+
+.center-text {
+	text-align: center;
+}

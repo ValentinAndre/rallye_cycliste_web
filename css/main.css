@@ -1,0 +1,39 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.container {
+	width: 95%;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.vertical-offset-50 {
+    padding-top:50px;
+}
+
+table > tfoot> tr {
+	display: none;
+}
+
+.hide {
+	display: none;
+}
+
+.icon-button {
+	-webkit-appearance: none;
+	outline: none;
+	border: 0;
+	padding:2px;
+	background: transparent;
+}
+
+select {
+    width: 100%;
+    font-size: 11px;
+    height: 28px;
+    text-align: center;
+}
