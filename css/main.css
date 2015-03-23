@@ -19,6 +19,10 @@ table > tfoot> tr {
 	display: none;
 }
 
+.no-border > tr > td:last-child {
+	border: none;
+}
+
 .hide {
 	display: none;
 }

@@ -12,7 +12,7 @@ require_once ('php/session.php');
 <head>
 		<?php require_once('php/head.php'); ?>
 		<script src="js/inscriptions.js"></script>
-		<title>Page des inscriptions</title>
+<title>Page des inscriptions</title>
 </head>
 <body>
 	<?php require_once('php/menu.php'); ?>
@@ -36,7 +36,7 @@ require_once ('php/session.php');
 						<th>Parcours</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody class="no-border">
 				</tbody>
 				<tfoot>
 					<tr>
@@ -70,51 +70,52 @@ require_once ('php/session.php');
 							cycliste
 						</h3>
 					</div>
-					<div class="panel-body">
-						<div class="form-group">
-							<div class="col-lg-2">
-								<label>Nom</label> <input class="form-control input-sm" id="nom"
-									name="nom" type="text" placeholder="Nom..." autofocus>
-							</div>
-							<div class="col-lg-2">
-								<label>Prénom</label> <input class="form-control input-sm"
-									id="prenom" name="prenom" type="text" placeholder="Prénom...">
-							</div>
-							<div class="col-lg-1">
-								<label>Sexe</label>		
-								<select id="sexe">
-									<option value="H">H</option>
-									<option value="F">F</option>
-								</select>							
-							</div>
-							<div class="col-lg-2">
-								<label>Date de naissance</label> <input
-									class="form-control input-sm" id="date" name="date" type="date"
-									placeholder="AAAA-MM-JJ">
-							</div>
+					<form>
+						<div class="panel-body">
+							<div class="form-group">
+								<div class="col-lg-2">
+									<label>Nom</label> <input class="form-control input-sm"
+										id="nom" name="nom" type="text" placeholder="Nom..." autofocus>
+								</div>
+								<div class="col-lg-2">
+									<label>Prénom</label> <input class="form-control input-sm"
+										id="prenom" name="prenom" type="text" placeholder="Prénom...">
+								</div>
+								<div class="col-lg-1">
+									<label>Sexe</label> <select id="sexe">
+										<option value="H">H</option>
+										<option value="F">F</option>
+									</select>
+								</div>
+								<div class="col-lg-2">
+									<label>Date de naissance</label> <input
+										class="form-control input-sm" id="date" name="date"
+										type="date" placeholder="AAAA-MM-JJ">
+								</div>
 
-							<div class="col-lg-1">
-								<label>Fédé.</label><select id="federation"></select>
-							</div>
-							<div class="col-lg-2">
-								<label>Ville ou Club</label> <input
-									class="form-control input-sm" id="clubOuVille"
-									name="clubOuVille" type="text" placeholder="Ville ou Club...">
-							</div>
-							<div class="col-lg-1">
-								<label>Dép.</label> <input class="form-control input-sm"
-									id="departement" name="departement" type="text"
-									placeholder="Ex: 07">
-							</div>
-							<div class="col-lg-1">
-								<label>Parcours</label> <select id="parcours"></select>
-							</div>
+								<div class="col-lg-1">
+									<label>Fédé.</label><select id="federation"></select>
+								</div>
+								<div class="col-lg-2">
+									<label>Ville ou Club</label> <input
+										class="form-control input-sm" id="clubOuVille"
+										name="clubOuVille" type="text" placeholder="Ville ou Club...">
+								</div>
+								<div class="col-lg-1">
+									<label>Dép.</label> <input class="form-control input-sm"
+										id="departement" name="departement" type="text"
+										placeholder="Ex: 07">
+								</div>
+								<div class="col-lg-1">
+									<label>Parcours</label> <select id="parcours"></select>
+								</div>
 
-							<input type="text" value="<?php echo $_SESSION['login']; ?>"
-								id="inscriveur" class="hide">
+								<input type="text" value="<?php echo $_SESSION['login']; ?>"
+									name="inscriveur" id="inscriveur" class="hide">
 
+							</div>
 						</div>
-					</div>
+					</form>
 
 					<div class="panel-footer clearfix">
 						<div class="pull-right">

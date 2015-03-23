@@ -1,7 +1,18 @@
 TODO:
-Enlever le fixed du navbar du menu principal
-Créer une classe pour les statistiques (DAO)
-Compléter l'aide en ligne
 
-Améliorer le module de pointage
-Finir la page des utilisateurs et celle des parcours
+Enlever le fixed du navbar du menu principal (php/menu.php)
+Créer une classe pour les statistiques (DAO)
+
+Créer IHM de la page des utilisateurs (utilisateurs.php)
+Créer IHM de la page des parcours (parcours.php)
+Compléter l'aide en ligne (aide.php)
+
+Réfléchir à une amélioration du module de pointage
+
+Implémenter module de gestion des utilisateurs (js/utilisateurs.js)
+Implémenter module de gestion des parcours (js/parcours.js)
+
+Utiliser la classe statistique pour charger les statistiques et les afficher avec des plugins jQuery
+(statistiques.php)
+
+Réfléchir sur les inscriptions en ligne...

@@ -1,10 +1,16 @@
-/* Module du pointage */
+/*
+ *	Module du pointage 
+ */
 
 /* Déclaration des objets principaux */
+var couleur = '#A4D0F5';
 var aCloner;
 var tbd;
 
-// Ajoute une ligne d'inscription dans le tableau
+/*
+ * Ajoute une ligne d'inscription dans le tableau
+ * Paramètre : une inscription (JSON Object) 
+ */
 function addLine(inscription) {
 	var nouv = aCloner.clone(true);
 	var tds = nouv.children();
@@ -12,9 +18,9 @@ function addLine(inscription) {
 	tds.eq(1).text(inscription.prenom);
 	tds.eq(2).text(inscription.sexe);
 	tds.eq(3).text(inscription.dateNaissance);
-	
+
 	if (inscription.estArrive == true) {
-		nouv.css('background-color', '#A4D0F5');
+		nouv.css('background-color', couleur);
 	} else {
 		nouv.click(function() {
 			update(nouv, inscription.idInscription);
@@ -24,7 +30,9 @@ function addLine(inscription) {
 	nouv.appendTo(tbd);
 }
 
-// Chargement des inscriptions et affichage dans la table
+/*
+ * Chargement des inscriptions et affichage dans la table 
+ */
 function loadInscriptions() {
 	var postData = {
 		action : 'retrieveAll',
@@ -39,7 +47,12 @@ function loadInscriptions() {
 	}, 'json');
 }
 
-// Met à jour le pointage d'un cycliste
+/*
+ * Met à jour le pointage d'un cycliste
+ * Paramètres :
+ * - jQtr (jQuery Object) : la ligne du tableau contenant l'inscription du cycliste
+ * - id (int) : l'identifiant d'inscription du cycliste 
+ */
 function update(jQtr, id) {
 	var postData = {
 		action : 'update',
@@ -51,7 +64,7 @@ function update(jQtr, id) {
 
 	$.post('php/crud.php', postData, function(data) {
 		if (data)
-			jQtr.css('background-color', '#A4D0F5');
+			jQtr.css('background-color', couleur);
 	}, 'json');
 }
 

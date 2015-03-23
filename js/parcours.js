@@ -1,10 +1,15 @@
-/* Module de gestion de la page des inscriptions */
+/*
+ * Module de gestion de la page des parcours 
+ */
 
 /* Déclaration des objets principaux */
 var aCloner;
 var tbd;
 
-// Ajoute une ligne d'inscription dans le tableau
+/*
+ * Ajoute un parcours dans une ligne du tableau
+ * Paramètre : un parcours (JSON Object)
+ */
 function addLine(parcours) {
 	var nouv = aCloner.clone(true);
 	var tds = nouv.children();
@@ -15,7 +20,9 @@ function addLine(parcours) {
 	nouv.appendTo(tbd);
 }
 
-// Chargement des parcours et affichage dans la table
+/*
+ * Chargement des parcours dans le tableau
+ */
 function loadParcours() {
 	var postData = {
 		action : 'retrieveAll',
