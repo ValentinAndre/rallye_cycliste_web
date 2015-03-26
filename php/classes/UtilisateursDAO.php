@@ -8,7 +8,7 @@ class UtilisateursDAO extends DAO {
 	// Teste si une paire mdp/login est dans la table Utilisateurs
 	public function check($login, $password)
 	{
-		// password stocké en md5
+		// stocké en md5
 		$password = md5($password);
 		$stmt = $this->pdo->prepare("SELECT * FROM UTILISATEURS WHERE login=? AND mdp=?");
 		$stmt->execute(array($login, $password));
