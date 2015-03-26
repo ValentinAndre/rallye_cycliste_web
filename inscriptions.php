@@ -23,6 +23,7 @@ require_once ('php/session.php');
 			</div>
 		</div>
 		<div class="row">
+		<div class="col-lg-12">
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -59,9 +60,10 @@ require_once ('php/session.php');
 					</tr>
 				</tfoot>
 			</table>
+			</div>
 		</div>
 
-		<div class="row vertical-offset-50">
+		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-info">
 					<div class="panel-heading">

@@ -227,7 +227,10 @@ $(document).ready(
 			// on cache les messages par défaut
 			erreur.hide();
 			info.hide();
-
+			
+			// pour éviter les problèmes d'asynchronisme
+			$.ajaxSetup({async:false});
+			
 			loadSelect();
 			loadInscriptions();
 
