@@ -5,7 +5,7 @@ class Utilisateur extends TableObject {
 	public $hasAutoIncrementedKey = false;
 	
     public function __tostring() {
-         return "$this->login, $this->mdp";
+         return $this->login;
     }
 }
 ?>

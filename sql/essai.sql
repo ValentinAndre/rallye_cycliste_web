@@ -12,14 +12,15 @@ INSERT INTO PARCOURS (idParcours, distance, type) VALUES
 (NULL, 110, 'ROUTE'),
 (NULL, 120, 'ROUTE');
 
+/* Mots de passe en md5 */
 INSERT INTO UTILISATEURS (login, mdp) VALUES 
-('admin', 'admin'),
-('benevole1', 'benevole'),
-('benevole2', 'benevole'),
-('benevole3', 'benevole'),
-('user1@mail.com', 'abcdef'),
-('user2@mail.com', '123456'),
-('user3@mail.com', 'toto');
+('admin', '21232f297a57a5a743894a0e4a801fc3 '),
+('benevole1', '168f6b25335dd80cd88bfd27889630bf'),
+('benevole2', '168f6b25335dd80cd88bfd27889630bf'),
+('benevole3', '168f6b25335dd80cd88bfd27889630bf'),
+('user1@mail.com', 'e80b5017098950fc58aad83c8c14978e'),
+('user2@mail.com', 'e80b5017098950fc58aad83c8c14978e'),
+('user3@mail.com', 'e80b5017098950fc58aad83c8c14978e');
 								
 INSERT INTO INSCRIPTIONS (idInscription, estArrive, nom, prenom, sexe, dateNaissance, federation, clubOuVille, departement, parcours, inscriveur) VALUES
 (NULL, 'false', 'TRUCHET', 'SEBASTIEN', 'F', '1986-06-18', 'NL', 'ZSTPERAY', 7, 1, 'benevole1'),
