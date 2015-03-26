@@ -11,10 +11,6 @@ body {
 	text-align: center;
 }
 
-.vertical-offset-50 {
-    padding-top:50px;
-}
-
 table > tfoot> tr {
 	display: none;
 }
