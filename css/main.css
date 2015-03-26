@@ -21,6 +21,9 @@ table > tfoot> tr {
 
 .no-border > tr > td:last-child {
 	border: none;
+	width: auto;
+	padding-right: 0px;
+	margin-right: 0px;
 }
 
 .hide {
