@@ -1,6 +1,6 @@
 <?php
-// Vérification compte admin pour menus cachés
-function displayHiddenMenu() {
+// On cache le menu de configuration si l'utilisateur n'est pas l'admin
+function hideMenu() {
 	if ($_SESSION ['login'] !== 'admin')
 		echo 'hide';
 }
@@ -28,7 +28,7 @@ function displayHiddenMenu() {
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="?deco=true"><span class="glyphicon glyphicon-off">&nbsp;</span>Se
 						Déconnecter</a></li>
-				<li class="dropdown <?php displayHiddenMenu() ?>"><a href="#"
+				<li class="dropdown <?php hideMenu() ?>"><a href="#"
 					class="dropdown-toggle" data-toggle="dropdown" role="button"
 					aria-expanded="false"> <span class="glyphicon glyphicon-cog">&nbsp;</span>
 						Configuration <span class="caret"></span></a>
