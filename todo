@@ -16,4 +16,20 @@ Implémenter module de gestion des parcours (js/parcours.js)
 Utiliser la classe statistique pour charger les statistiques et les afficher avec des plugins jQuery
 (statistiques.php)
 
-Réfléchir sur les inscriptions en ligne...
+Statistiques générales:
+------------------------
+	- Répartition VTT/Route (PieChart)
+	- Répartition non licenciés, féminines, mineurs, FFCT, UFOLEP, FSGT, FFC (BarChart)
+	
+Statistiques Route et VTT:
+--------------------------
+	- Répartition féminines, non-licenciés, licenciés Saint-Péray, non licenciés Saint-Péray (PieChart)
+	- Répartition des participants par parcours (PieChart)
+	- Répartition des participants par club (PieChart)
+	
+	- 2 clubs les plus nombreux d'Ardèche (Table Row)
+	- 2 clubs les plus nombreux de Drôme (Table Row)
+	- Club avec le plus de filles (Table Row)
+	
+	- L'âge de la plus jeune participante (Table Row)
+	- L'âge du plus jeune participant (Table Row)
