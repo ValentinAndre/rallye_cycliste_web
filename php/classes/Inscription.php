@@ -7,10 +7,5 @@ class Inscription extends TableObject {
 	public function __tostring() {
 		return "$this->idInscription, $this->nom, $this->prenom, $this->sexe, $this->dateNaissance, $this->federation, $this->clubOuVille, $this->departement";
 	}
-	
-	public function getAge() {
-		$age = date_create($this->dateNaissance)->diff(date_create('today'))->y;
-		return $age; 
-	}
 }
 ?>
