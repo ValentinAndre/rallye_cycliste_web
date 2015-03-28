@@ -3,7 +3,7 @@
  */
 
 /* Déclaration des tableaux globaux */
-var federations = [ 'FFC', 'FFCT', 'NL', 'FSGT', 'UFOLEP' ];
+var federations = [ 'NL', 'FFCT', 'FFC', 'FSGT', 'UFOLEP' ];
 var parcours = [];
 
 /* Déclaration des objets principaux */
@@ -116,7 +116,9 @@ function supprimer(id) {
  */
 function ajouter() {
 	if (checkInputs()) {
-
+		// on sauvegarde le parcours localement
+		var parcours = parseInt(inputs[7].val());
+		
 		var postData = {
 			action : 'create',
 			'class' : 'Inscription',
@@ -129,7 +131,7 @@ function ajouter() {
 			federation : inputs[4].val(),
 			clubOuVille : inputs[5].val(),
 			departement : parseInt(inputs[6].val()),
-			parcours : parseInt(inputs[7].val()),
+			parcours : parcours,
 			inscriveur : inputs[8].val()
 		};
 
@@ -143,6 +145,8 @@ function ajouter() {
 
 				addLine(data);
 				$('form').trigger("reset");
+				// on restaure le parcours
+				inputs[7].val(parcours);
 				displayMessage(false, "L'inscription a bien été ajoutée !");
 			}
 		}, 'json');
@@ -235,7 +239,8 @@ $(document).ready(
 			loadInscriptions();
 
 			// Définition du click sur valider
-			$('#valider').click(function() {
+			$('#valider').click(function(event) {
+				event.preventDefault();
 				ajouter();
 			});
 });
