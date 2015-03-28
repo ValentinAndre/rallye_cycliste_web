@@ -14,7 +14,6 @@ $exemple = new Inscription(array('idInscription' => DAO::UNKNOWN_ID,
 	 'dateNaissance' => "1994-01-19", 'federation' => "NL", 'clubOuVille' => "ZSTPERAY", 
 	  'departement' => 7, 'idParcours' => 1, 'idUtilisateur' => 2));
 echo $exemple, "\n";
-echo "Age: ", $exemple->getAge(), "\n";
 
 $inscriptions = new InscriptionsDAO(MaBD::getInstance());
 echo $inscriptions->getOne(1), "\n";
@@ -50,7 +49,7 @@ afficheTout($inscriptions);
 
 echo "Les 5 derniers enregistrements de benevole1:\n";
 echo "---------------------------\n";
-$last = $inscriptions->getLastFive('benevole1');
+$last = $inscriptions->getLastTen('benevole1');
 foreach($last as $i)
 	echo $i, "\n";
 ?>
