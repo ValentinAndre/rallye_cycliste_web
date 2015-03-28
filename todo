@@ -10,6 +10,9 @@ Compléter l'aide en ligne (aide.php)
 Réfléchir à une amélioration du module de pointage
 --> Tri par ordre alphabétique sur le nom
 
+Implémenter la page reset censé remettre à zéro les inscriptions, les parcours et les utilisateurs
+--> Confirmation avant suppression !
+
 Implémenter module de gestion des utilisateurs (js/utilisateurs.js)
 Implémenter module de gestion des parcours (js/parcours.js)
 
