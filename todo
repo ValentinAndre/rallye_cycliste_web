@@ -1,23 +1,29 @@
 TODO:
 
-Enlever le fixed du navbar du menu principal (php/menu.php)
-Créer une classe pour les statistiques (DAO)
+Divers :
+--> Enlever le fixed du navbar du menu principal (php/menu.php)
 
-Créer IHM de la page des utilisateurs (utilisateurs.php)
-Créer IHM de la page des parcours (parcours.php)
-Compléter l'aide en ligne (aide.php)
+Implémenter la page des statistiques (stats.php) :
+--> Créer une classe php pour les statistiques
+--> Utiliser cette classe avec ChartJS
 
-Réfléchir à une amélioration du module de pointage
---> Tri par ordre alphabétique sur le nom
+Implémenter la page des utilisateurs (utilisateurs.php) :
+--> Vérifier existance d'une référence avant suppression
+--> Ajouter un utilisateur, modifier son mdp, supprimer un utilisateur
+--> Popup pour modification du mot de passe (bootstrap popup ?)
 
-Implémenter la page reset censé remettre à zéro les inscriptions, les parcours et les utilisateurs
---> Confirmation avant suppression !
+Implémenter la page des parcours (parcours.php) :
+--> Vérifier existance d'une référence avant suppression ou modification
+--> Ajouter, modifier ou supprimer un parcours
+--> S'inspirer du TP contact sous forme de tableau
+--> Tout en php
 
-Implémenter module de gestion des utilisateurs (js/utilisateurs.js)
-Implémenter module de gestion des parcours (js/parcours.js)
+Compléter l'aide en ligne (aide.php) :
+--> Vidéo YT ?
 
-Utiliser la classe statistique pour charger les statistiques et les afficher avec des plugins jQuery
-(statistiques.php)
+Implémenter la page de gestion de la base de données (bdd.php) :
+--> Vider les inscriptions (Confirmation avant suppression !)
+--> Importer les préinscriptions
 
 Statistiques générales:
 ------------------------
