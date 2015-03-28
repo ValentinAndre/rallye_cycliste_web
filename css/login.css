@@ -2,13 +2,14 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-image:url(../img/fond.jpg);
+  background-position: center center;
   background-attachment: fixed ;
   background-repeat: no-repeat ;
   background-size:cover ;
 }
 
-.vertical-offset-100 {
-    padding-top:100px;
+.vertical-offset-50 {
+    padding-top:50px;
 }
 
 .center-text {

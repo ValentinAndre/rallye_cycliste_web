@@ -52,7 +52,7 @@ if (isset($_POST['connexion'])) {
 	</head>
 	<body>
 		<div class="container">
-    		<div class="row vertical-offset-100">
+    		<div class="row vertical-offset-50">
     			<div class="col-lg-offset-1 col-lg-4">
     				<div class="panel panel-default">
 			  			<div class="panel-heading">
