@@ -81,6 +81,10 @@ function loadInscriptions() {
  * @param : id (int) : l'identifiant de l'inscription
  */
 function supprimer(id) {
+	var answer = confirm ("Êtes vous sûr de vouloir supprimer cette inscription ?");
+	if (!answer)
+		return;
+	
 	var postData = {
 		action : 'delete',
 		'class' : 'Inscription',
