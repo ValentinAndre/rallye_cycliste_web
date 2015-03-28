@@ -13,7 +13,7 @@ if ($_SESSION ['login'] !== 'admin') {
 <head>
 		<?php require_once('php/head.php'); ?>
 		<script src="js/parcours.js"></script>
-<title>Gestion des parcours</title>
+<title>Parcours</title>
 </head>
 <body>
 		<?php require_once('php/menu.php'); ?>

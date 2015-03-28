@@ -6,7 +6,7 @@ require_once('php/session.php');
 <html>
 	<head>
 		<?php require_once('php/head.php'); ?>
-		<title>Page Principale</title>
+		<title>Aide</title>
 	</head>
 	<body>
 		<?php require_once('php/menu.php'); ?>

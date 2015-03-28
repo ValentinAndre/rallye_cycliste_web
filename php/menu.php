@@ -22,7 +22,7 @@ function hideMenu() {
 			<ul class="nav navbar-nav">
 				<li><a href="inscriptions.php">Inscriptions</a></li>
 				<li><a href="pointage.php">Pointage</a></li>
-				<li><a href="statistiques.php">Statistiques</a></li>
+				<li><a href="statistiques.php">Statistiques</a></li>				
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">

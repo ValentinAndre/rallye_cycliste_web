@@ -13,7 +13,7 @@ if ($_SESSION ['login'] !== 'admin') {
 <head>
 		<?php require_once('php/head.php'); ?>
 		<script src="js/utilisateurs.js"></script>
-<title>Gestion des utilisateurs</title>
+<title>Utilisateurs</title>
 </head>
 <body>
 		<?php require_once('php/menu.php'); ?>

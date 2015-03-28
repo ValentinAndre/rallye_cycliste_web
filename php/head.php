@@ -4,3 +4,4 @@
 <link href="css/main.css" rel="stylesheet"/>
 <script src="js/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/chart.js"></script>

@@ -12,7 +12,7 @@ require_once ('php/session.php');
 <head>
 		<?php require_once('php/head.php'); ?>
 		<script src="js/inscriptions.js"></script>
-<title>Page des inscriptions</title>
+<title>Inscriptions</title>
 </head>
 <body>
 	<?php require_once('php/menu.php'); ?>
