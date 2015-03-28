@@ -2,11 +2,10 @@
  * Module de gestion de la page des inscriptions
  */
 
-/* Déclaration des tableaux globaux */
-var federations = [ 'NL', 'FFCT', 'FFC', 'FSGT', 'UFOLEP' ];
-var parcours = [];
-
 /* Déclaration des objets principaux */
+var federations = [ 'NL', 'FFCT', 'FFC', 'FSGT', 'UFOLEP' ];
+var parcours = new TableauParcours();
+
 var info, erreur;
 var aCloner;
 var tbd;
@@ -14,7 +13,7 @@ var inputs;
 
 /*
  * Ajoute une inscription dans une ligne du tableau
- * Paramètre : une inscription (JSON Object)
+ * @param : une inscription (JSON Object)
  */
 function addLine(inscription) {
 	var nouv = aCloner.clone(true);
@@ -27,10 +26,7 @@ function addLine(inscription) {
 	tds.eq(4).text(inscription.federation);
 	tds.eq(5).text(inscription.clubOuVille);
 	tds.eq(6).text(inscription.departement);
-
-	tds.eq(7).text(
-			parcours[inscription.parcours - 1].type
-					+ parcours[inscription.parcours - 1].distance);
+	tds.eq(7).text(parcours.getName(inscription.parcours-1));
 
 	// Paramétrage des boutons
 	var btns = tds.eq(8).children();
@@ -57,14 +53,7 @@ function loadSelect() {
 		dao : 'ParcoursDAO'
 	}
 
-	$.post("php/crud.php", postData, function(liste) {
-		for (i in liste) {
-			parcours[i] = liste[i];
-			$('#parcours').append(
-					new Option(liste[i].type + liste[i].distance,
-							liste[i].idParcours));
-		}
-	}, 'json');
+	parcours.feedSelect(inputs[7].get(0));
 }
 
 /*
@@ -89,7 +78,7 @@ function loadInscriptions() {
 
 /*
  * Supprime une inscription 
- * Paramètre : id (int) : l'identifiant de l'inscription
+ * @param : id (int) : l'identifiant de l'inscription
  */
 function supprimer(id) {
 	var postData = {
@@ -159,7 +148,7 @@ function ajouter() {
 
 /*
  * Copie une ligne du tableau dans les champs à saisir
- * Paramètre : une inscription (JSON Object)
+ * @param : une inscription (JSON Object)
  */
 function copier(inscription) {
 	inputs[0].val(inscription.nom);
@@ -179,7 +168,7 @@ function copier(inscription) {
 
 /*
  * Affiche un message d'erreur ou d'information en bas de la page
- * Paramètres :
+ * @params :
  * - error (boolean) : vrai si il s'agit d'une erreur
  * - msg (string) : le message à afficher
  */
