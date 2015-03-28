@@ -33,9 +33,9 @@ function hideMenu() {
 					aria-expanded="false"> <span class="glyphicon glyphicon-cog">&nbsp;</span>
 						Configuration <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="parcours.php">Parcours</a></li>
+						<li><a href="bdd.php">Base de données</a></li>
 						<li><a href="utilisateurs.php">Utilisateurs</a></li>
-						<li><a href="reset.php">Reset</a></li>
+						<li><a href="parcours.php">Parcours</a></li>											
 					</ul></li>
 				<li><a href="aide.php"><span class="glyphicon glyphicon-search">&nbsp;</span>Aide</a></li>
 			</ul>
