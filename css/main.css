@@ -11,6 +11,10 @@ body {
 	text-align: center;
 }
 
+.center-table * {
+	text-align: center;
+}
+
 table > tfoot> tr {
 	display: none;
 }
@@ -32,6 +36,10 @@ table > tfoot> tr {
 	border: 0;
 	padding:2px;
 	background: transparent;
+}
+
+.sort-buttons th:hover {
+	cursor: pointer;
 }
 
 select {

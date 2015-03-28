@@ -19,19 +19,21 @@ require_once ('php/session.php');
 		</div>
 		<div class="row">
 			<div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
-				<table class="table table-striped">
+				<table class="table table-bordered center-table">
 					<thead>
-						<tr>
-							<th>Nom</th>
-							<th>Prénom</th>
-							<th>Sexe</th>
-							<th>Date de naissance</th>
+						<tr class="sort-buttons">
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Nom</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Prénom</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Sexe</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Date de naissance</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Parcours</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<tfoot>
 						<tr>
+							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>

@@ -3,13 +3,14 @@
  */
 
 /* Déclaration des objets principaux */
+var parcours = new TableauParcours();
 var couleur = '#A4D0F5';
 var aCloner;
 var tbd;
 
 /*
  * Ajoute une ligne d'inscription dans le tableau
- * Paramètre : une inscription (JSON Object) 
+ * @params : une inscription (JSON Object) 
  */
 function addLine(inscription) {
 	var nouv = aCloner.clone(true);
@@ -18,9 +19,11 @@ function addLine(inscription) {
 	tds.eq(1).text(inscription.prenom);
 	tds.eq(2).text(inscription.sexe);
 	tds.eq(3).text(inscription.dateNaissance);
+	tds.eq(4).text(parcours.getName(inscription.parcours-1));
 
 	if (inscription.estArrive == true) {
 		nouv.css('background-color', couleur);
+		
 	} else {
 		nouv.click(function() {
 			update(nouv, inscription.idInscription);
@@ -49,7 +52,7 @@ function loadInscriptions() {
 
 /*
  * Met à jour le pointage d'un cycliste
- * Paramètres :
+ * @params :
  * - jQtr (jQuery Object) : la ligne du tableau contenant l'inscription du cycliste
  * - id (int) : l'identifiant d'inscription du cycliste 
  */
@@ -72,5 +75,9 @@ $(document).ready(function() {
 	aCloner = $('table > tfoot > tr:last-child');
 	tbd = $('table > tbody');
 
+	// pour éviter les problèmes d'asynchronisme
+	$.ajaxSetup({async:false});
+	
 	loadInscriptions();
+	$('table').tablesorter();
 });
