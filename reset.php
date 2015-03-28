@@ -7,7 +7,7 @@ require_once ('php/session.php');
 <head>
 		<?php require_once('php/head.php'); ?>
 		<script src="js/pointage.js"></script>
-<title>Pointage</title>
+<title>Reset</title>
 </head>
 <body>
 		<?php require_once('php/menu.php'); ?>
