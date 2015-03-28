@@ -65,8 +65,8 @@ require_once ('php/session.php');
 
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="panel panel-info">
-					<form>
+				<form>
+					<div class="panel panel-info">
 						<div class="panel-heading">
 							<h3 class="panel-title">
 								<span class="glyphicon glyphicon-ok">&nbsp;</span> Inscrire un
@@ -123,8 +123,8 @@ require_once ('php/session.php');
 								<button type="submit" class="btn btn-primary" id="valider">Valider</button>
 							</div>
 						</div>
-					</form>
-				</div>
+					</div>
+				</form>
 			</div>
 		</div>
 
