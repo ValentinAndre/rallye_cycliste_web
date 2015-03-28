@@ -11,7 +11,7 @@
  * - action : le nom de la fonction à appeler
  * - class : le nom de la classe de l'objet
  * - dao : le nom de la classe DAO de l'objet
- * - champs de l'objet : valeurs des champs
+ * - valeurs des champs de l'objet
  *
  * Exemple :
  * crud.php?action=create&class=Parcours&dao=ParcoursDAO&distance=20&type=VTT
