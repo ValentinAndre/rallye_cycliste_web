@@ -62,7 +62,7 @@ if (isset($_POST['connexion'])) {
 			    			<form method='post' action='login.php'>
                     			<fieldset>
 			    	  				<div class="form-group">
-			    		    			<input class="form-control" placeholder="Email ou login" name="login" type="text" required>
+			    		    			<input class="form-control" placeholder="Email ou login" name="login" type="text" required autofocus>
 			    					</div>
 			    					<div class="form-group">
 			    						<input class="form-control" placeholder="Password" name="password" type="password" value="" required>
