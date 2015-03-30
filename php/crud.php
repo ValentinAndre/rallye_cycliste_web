@@ -92,11 +92,11 @@ function retrieve() {
  * Fonction qui récupère les 10 enregistrements d'un utilisateur dans la base
  * Retourne un objet au format JSON
  */
-function retrieveLastTen() {
+function retrieveLastSix() {
 	global $dao, $fields, $class;
 	
 	if ($class === 'Inscription') {
-		$res = $dao->getLastTen ( reset ( $fields ) );
+		$res = $dao->getLastSix ( reset ( $fields ) );
 		if ($res === null)
 			echo json_encode ( false );
 		else

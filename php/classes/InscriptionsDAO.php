@@ -8,9 +8,9 @@ class InscriptionsDAO extends DAO {
      * Méthode permettant d'obtenir les 10 derniers enregistrements d'un utilisateur
      * @return : un tableau d'inscriptions
      */
-    public function getLastTen($user) {
+    public function getLastSix($user) {
         $res = array();
-        $stmt = $this->pdo->prepare("SELECT * FROM INSCRIPTIONS WHERE inscriveur=? ORDER BY idInscription DESC LIMIT 10");
+        $stmt = $this->pdo->prepare("SELECT * FROM INSCRIPTIONS WHERE inscriveur=? ORDER BY idInscription DESC LIMIT 6");
         $stmt->execute(array($user));
         foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row)
         	$res[] = new Inscription($row);

@@ -12,19 +12,15 @@ require_once ('php/session.php');
 <head>
 		<?php require_once('php/head.php'); ?>
 		<script src="js/inscriptions.js"></script>
-<title>Inscriptions</title>
+<title>Gestion des inscriptions</title>
 </head>
 <body>
 	<?php require_once('php/menu.php'); ?>
 	<div class="container">
-		<div class="row">
-			<div class="page-header center-text">
-				<h1>Gestion des inscriptions</h1>
-			</div>
-		</div>
-		<div class="row">
+		
+		<div class="row vertical-offset-50">
 			<div class="col-lg-12">
-				<table class="table table-striped">
+				<table class="table table-condensed">
 					<thead>
 						<tr>
 							<th>Nom</th>

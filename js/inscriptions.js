@@ -55,7 +55,7 @@ function loadSelect() {
  */
 function loadInscriptions() {
 	var postData = {
-		action : 'retrieveLastTen',
+		action : 'retrieveLastSix',
 		'class' : 'Inscription',
 		dao : 'InscriptionsDAO',
 		inscriveur : inputs[8].val()
@@ -127,7 +127,7 @@ function ajouter() {
 				displayMessage(true, "L'inscription n'a pas été ajoutée !");
 			} else {
 				// on supprime la première ligne du tableau
-				if (tbd.children().size() > 9)
+				if (tbd.children().size() > 5)
 					$('table > tbody > tr:first-child').remove();
 
 				addLine(data);
