@@ -9,8 +9,8 @@ var aCloner;
 var tbd;
 
 /*
- * Ajoute une ligne d'inscription dans le tableau
- * @params : une inscription (JSON Object) 
+ * Ajoute une ligne d'inscription dans le tableau @params : une inscription
+ * (JSON Object)
  */
 function addLine(inscription) {
 	var nouv = aCloner.clone(true);
@@ -19,14 +19,16 @@ function addLine(inscription) {
 	tds.eq(1).text(inscription.prenom);
 	tds.eq(2).text(inscription.sexe);
 	tds.eq(3).text(inscription.dateNaissance);
-	tds.eq(4).text(parcours.getName(inscription.parcours-1));
+	tds.eq(4).text(parcours.getName(inscription.parcours - 1));
 
 	if (inscription.estArrive == true) {
 		nouv.css('background-color', couleur);
-		
+		nouv.click(function() {
+			update(nouv, inscription.idInscription, 0);
+		});
 	} else {
 		nouv.click(function() {
-			update(nouv, inscription.idInscription);
+			update(nouv, inscription.idInscription, 1);
 		});
 	}
 
@@ -34,7 +36,7 @@ function addLine(inscription) {
 }
 
 /*
- * Chargement des inscriptions et affichage dans la table 
+ * Chargement des inscriptions et affichage dans la table
  */
 function loadInscriptions() {
 	var postData = {
@@ -51,23 +53,34 @@ function loadInscriptions() {
 }
 
 /*
- * Met à jour le pointage d'un cycliste
- * @params :
- * - jQtr (jQuery Object) : la ligne du tableau contenant l'inscription du cycliste
- * - id (int) : l'identifiant d'inscription du cycliste 
+ * Met à jour le pointage d'un cycliste @params : - jQtr (jQuery Object) : la
+ * ligne du tableau contenant l'inscription du cycliste - id (int) :
+ * l'identifiant d'inscription du cycliste
  */
-function update(jQtr, id) {
+function update(jQtr, id, arrive) {
 	var postData = {
 		action : 'update',
 		'class' : 'Inscription',
 		dao : 'InscriptionsDAO',
 		idInscription : id,
-		estArrive : 1
+		estArrive : arrive
 	};
 
+	if (arrive)
+		jQtr.css('background-color', couleur);
+	else
+		jQtr.css('background-color', "white");
+
 	$.post('php/crud.php', postData, function(data) {
-		if (data)
-			jQtr.css('background-color', couleur);
+		if (data) {
+			// on met à jour les données dans l'événement
+			jQtr.off();
+			jQtr.click(function() {
+				update(jQtr, id, 1 - arrive);
+			});
+		} else {
+			alert("Il y a eu une erreur dans le pointage !");
+		}
 	}, 'json');
 }
 
@@ -76,8 +89,10 @@ $(document).ready(function() {
 	tbd = $('table > tbody');
 
 	// pour éviter les problèmes d'asynchronisme
-	$.ajaxSetup({async:false});
-	
+	$.ajaxSetup({
+		async : false
+	});
+
 	loadInscriptions();
 	$('table').tablesorter();
 });
