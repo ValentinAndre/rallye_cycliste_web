@@ -10,7 +10,7 @@ class Statistiques {
 	 * Fonction pour obtenir le nombre d'inscriptions total
 	 * @return : un entier
 	 */
-	public function getNumberOfInscriptions() {
+	public function getEffectifTotal() {
 		$stmt = $this->pdo->query("SELECT COUNT(*) AS effectif FROM INSCRIPTIONS");		
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		return $row['effectif'];	
@@ -18,32 +18,45 @@ class Statistiques {
 	
 	/*
 	 * Fonction qui donne le nombre d'inscriptions par type de parcours
-	 * @return : un DataSet
+	 * @return : un tableau associatif (type parcours => effectif)
 	 */
-	public function getNumberOfInscriptionsByParcours() {
-		$labels = array(); $values = array();
-		$stmt = $this->pdo->query("select distance, type, count(*) as effectif from INSCRIPTIONS join PARCOURS on parcours=idParcours group by parcours");
+	public function getEffectifParParcours() {
+		$res = array();
+		$stmt = $this->pdo->query("select type, count(*) as effectif from INSCRIPTIONS join PARCOURS on parcours=idParcours group by parcours");
 		foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-			$labels[] = $row['type'].$row['distance']; 
-			$values[] = $row['effectif'];
+			$res[$row['type']] = $row['effectif'];
 		}	
-		return new DataSet($labels, $values);
+		return $res;
 	}
 	
-	/*
-	 * Fonction qui donne le nombre d'inscriptions par parcours
-	 * @return : un DataSet
-	 */
-	public function getNumberOfInscriptionsByParcoursType() {
-		$labels = array(); $values = array();
-		$stmt = $this->pdo->query("select type, count(*) as effectif from INSCRIPTIONS join PARCOURS on parcours=idParcours group by type");
+	public function getClubs() {
+		$res = array();
+		$stmt = $this->pdo->query("select clubOuVille from INSCRIPTIONS");
 		foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-			$labels[] = $row['type'];
-			$values[] = $row['effectif'];
+			$res[] = getClub($row['clubOuVille']);
 		}
-		return new DataSet($labels, $values);
+		return $res;
 	}
 	
+	private function getClub($club) {
+		$fields = array();
+		$stmt = $this->pdo->query("SELECT COUNT(*) AS effectif, departement FROM INSCRIPTIONS WHERE clubOuVille=$club");
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$fields['effectifTotal'] = $row['effectif'];
+		$fields['departement'] = $row['departement'];
+		
+		$stmt = $this->pdo->query("SELECT COUNT(*) AS effectif FROM INSCRIPTIONS WHERE clubOuVille=$club WHERE sexe='H'");	
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$fields['effectifHommes'] = $row['effectif'];
+		$fields['effectifFemmes'] = $fields['effectifTotal'] - $fields['effectifHommes'];
+		
+		$stmt = $this->pdo->prepare("SELECT COUNT(*) as effectif FROM INSCRIPTIONS WHERE clubOuVille=$club AND TIMESTAMPDIFF(YEAR, dateNaissance, CURDATE()) < 19");		
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$fields['effectifMineurs'] = $row['effectif'];
+		
+		return new Club($fields);
+	} 
+		
 	/*
 	 * Fonction qui donne la répartition des inscriptions sur un champs donné
 	 * @params : un nom de champs, un type de parcours (optionnel)

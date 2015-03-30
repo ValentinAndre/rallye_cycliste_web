@@ -80,7 +80,7 @@ require_once ('php/session.php');
 										id="prenom" name="prenom" type="text" placeholder="Prénom...">
 								</div>
 								<div class="col-lg-1">
-									<label>Sexe</label> <select id="sexe">
+									<label>Sexe</label> <select class="sel" id="sexe">
 										<option value="H">H</option>
 										<option value="F">F</option>
 									</select>
@@ -92,7 +92,7 @@ require_once ('php/session.php');
 								</div>
 
 								<div class="col-lg-1">
-									<label>Fédé.</label><select id="federation"></select>
+									<label>Fédé.</label><select class="sel" id="federation"></select>
 								</div>
 								<div class="col-lg-2">
 									<label>Ville ou Club</label> <input
@@ -105,7 +105,7 @@ require_once ('php/session.php');
 										placeholder="Ex: 07">
 								</div>
 								<div class="col-lg-1">
-									<label>Parcours</label> <select id="parcours"></select>
+									<label>Parcours</label> <select class="sel" id="parcours"></select>
 								</div>
 
 								<input type="text" value="<?php echo $_SESSION['login']; ?>"

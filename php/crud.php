@@ -26,7 +26,7 @@ function __autoload($class) {
 $functions = [ 
 		'retrieve',
 		'retrieveAll',
-		'retrieveLastTen', // spécifique à aux Inscriptions
+		'retrieveLastSix', // spécifique à aux Inscriptions
 		'delete',
 		'update',
 		'create' 
