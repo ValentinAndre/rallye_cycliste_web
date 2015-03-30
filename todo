@@ -2,7 +2,6 @@ TODO:
 
 Implémenter la page des statistiques (stats.php) :
 --> Créer une classe php pour les statistiques
---> Utiliser cette classe avec ChartJS
 
 Implémenter la page des utilisateurs (utilisateurs.php) :
 --> Vérifier existance d'une référence avant suppression
@@ -14,9 +13,6 @@ Implémenter la page des parcours (parcours.php) :
 --> Ajouter, modifier ou supprimer un parcours
 --> S'inspirer du TP contact sous forme de tableau
 --> Tout en php
-
-Compléter l'aide en ligne (aide.php) :
---> Vidéo YT ?
 
 Implémenter la page de gestion de la base de données (bdd.php) :
 --> Vider les inscriptions (Confirmation avant suppression !)

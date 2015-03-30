@@ -36,8 +36,7 @@ function hideMenu() {
 						<li><a href="bdd.php">Base de données</a></li>
 						<li><a href="utilisateurs.php">Utilisateurs</a></li>
 						<li><a href="parcours.php">Parcours</a></li>											
-					</ul></li>
-				<li><a href="aide.php"><span class="glyphicon glyphicon-search">&nbsp;</span>Aide</a></li>
+					</ul></li>				
 			</ul>
 		</div>
 	</div>
