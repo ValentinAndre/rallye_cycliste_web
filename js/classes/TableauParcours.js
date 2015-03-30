@@ -13,6 +13,9 @@ function TableauParcours() {
 		'class' : 'Parcours',
 		dao : 'ParcoursDAO'
 	}
+	
+	// pour éviter les problèmes d'asynchronisme
+	$.ajaxSetup({async:false});
 
 	$.post("php/crud.php", postData, function(liste) {
 		for (i in liste) {			
@@ -40,9 +43,9 @@ function TableauParcours() {
 	 * Remplit un select de parcours
 	 * @param : un select (objet DOM)
 	 */
-	this.feedSelect = function(select) {
+	this.feedSelect = function(jQselect) {
 		for (i=0; i<this.parcours.length; i++)
-			select.appendChild(
+			select.append(
 					new Option(this.parcours[i].type + this.parcours[i].distance,
 							this.parcours[i].idParcours));	
 	}

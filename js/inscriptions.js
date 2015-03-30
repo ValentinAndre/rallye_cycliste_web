@@ -43,17 +43,11 @@ function addLine(inscription) {
 /*
  * Chargement des fédérations et des parcours dans les selects
  */
-function loadSelect() {
+function loadSelect() {	
 	for (i in federations)
 		$('#federation').append(new Option(federations[i], federation[i]));
-
-	postData = {
-		action : 'retrieveAll',
-		'class' : 'Parcours',
-		dao : 'ParcoursDAO'
-	}
-
-	parcours.feedSelect(inputs[7].get(0));
+	
+	parcours.feedSelect(inputs[7]);
 }
 
 /*

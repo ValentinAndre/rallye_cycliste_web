@@ -1,8 +1,5 @@
 TODO:
 
-Divers :
---> Enlever le fixed du navbar du menu principal (php/menu.php)
-
 Implémenter la page des statistiques (stats.php) :
 --> Créer une classe php pour les statistiques
 --> Utiliser cette classe avec ChartJS
