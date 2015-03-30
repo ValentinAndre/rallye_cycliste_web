@@ -45,7 +45,7 @@ function TableauParcours() {
 	 */
 	this.feedSelect = function(jQselect) {
 		for (i=0; i<this.parcours.length; i++)
-			select.append(
+			jQselect.append(
 					new Option(this.parcours[i].type + this.parcours[i].distance,
 							this.parcours[i].idParcours));	
 	}
