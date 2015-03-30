@@ -11,6 +11,14 @@ body {
     padding-top:50px;
 }
 
+.vertical-offset-20 {
+    padding-top:20px;
+}
+
+.vertical-offset-5 {
+    padding-top:5px;
+}
+
 .center-text {
 	text-align: center;
 }
@@ -38,7 +46,8 @@ table > tfoot> tr {
 	-webkit-appearance: none;
 	outline: none;
 	border: 0;
-	padding:2px;
+	padding: 0px;
+	margin-left: 5px;
 	background: transparent;
 }
 
@@ -46,7 +55,7 @@ table > tfoot> tr {
 	cursor: pointer;
 }
 
-select {
+.sel {
     width: 100%;
     font-size: 11px;
     height: 28px;
