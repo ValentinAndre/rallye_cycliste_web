@@ -26,13 +26,15 @@ require_once ('php/session.php');
 							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Prénom</th>
 							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Sexe</th>
 							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Date de naissance</th>
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Parcours</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Type Parcours</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Distance</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<tfoot>
 						<tr>
+							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>

@@ -40,6 +40,30 @@ function TableauParcours() {
 	}
 	
 	/*
+	 * Donne le type d'un parcours à partir d'un indice
+	 * @param : un entier
+	 * @return : une chaine
+	 */
+	this.getType = function(indice) {
+		if (indice >= 0 && indice < this.parcours.length)
+			return this.parcours[indice].type;
+		else
+			return -1;
+	}
+	
+	/*
+	 * Donne la distance d'un parcours à partir d'un indice
+	 * @param : un entier
+	 * @return : un entier
+	 */
+	this.getDistance = function(indice) {
+		if (indice >= 0 && indice < this.parcours.length)
+			return this.parcours[indice].distance;
+		else
+			return -1;
+	}
+	
+	/*
 	 * Remplit un select de parcours
 	 * @param : un select (objet DOM)
 	 */
