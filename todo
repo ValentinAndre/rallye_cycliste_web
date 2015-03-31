@@ -4,6 +4,8 @@ Divers :
 --> Diviser champs parcours en typpe et distance dans la page inscriptions
 --> Ajouter une animation lors du click sur les flèches de tri
 --> Stats sur la page d'accueil de l'admin
+--> Impression stats
+--> Format date naissance
 
 Implémenter la page des utilisateurs (utilisateurs.php) :
 --> Vérifier existance d'une référence avant suppression
