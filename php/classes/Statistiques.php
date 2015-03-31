@@ -10,22 +10,38 @@ class Statistiques {
 	 * Donne le nombre d'inscriptions total
 	 * @return : un entier
 	 */
-	public function getEffectifTotal() {
-		$stmt = $this->pdo->query("SELECT COUNT(*) AS effectif FROM INSCRIPTIONS");		
+	public function getEffectif($complementRequete) {
+		$stmt = $this->pdo->query("SELECT COUNT(*) AS effectif FROM INSCRIPTIONS ".$complementRequete);		
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		return $row['effectif'];	
 	}
+	
 	
 	/*
 	 * Donne le nombre d'inscriptions par type de parcours
 	 * @return : un tableau associatif (type parcours => effectif)
 	 */
-	public function getEffectifParParcours() {
+	public function getEffectifParTypeParcours() {
 		$res = array();
 		$stmt = $this->pdo->query("select type, count(*) as effectif from INSCRIPTIONS join PARCOURS on parcours=idParcours group by parcours");
 		foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
 			$res[$row['type']] = $row['effectif'];
 		}	
+		return $res;
+	}
+	
+
+	/*
+	 * Donne le nombre d'inscriptions par parcours VTT
+	* @return : un tableau associatif (parcours => effectif)
+	*/
+	public function getEffectifParParcours($type) {
+		$res = array();
+		$stmt = $this->pdo->prepare("SELECT COUNT(*) AS effectif, distance FROM INSCRIPTIONS JOIN PARCOURS ON PARCOURS.idParcours=INSCRIPTIONS.parcours WHERE type=? GROUP BY distance");
+		$stmt->execute(array($type));
+		foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+			$res[$row['distance']] = $row['effectif'];
+		}
 		return $res;
 	}
 	
@@ -72,5 +88,6 @@ class Statistiques {
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		return $row['age'];	
 	}
+
 }
 ?>
