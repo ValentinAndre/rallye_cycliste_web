@@ -20,7 +20,7 @@ $new = new Parcours(array('idParcours' => DAO::UNKNOWN_ID,
 function afficherFormulaire() {
 	global $parcours, $new;			
 	
-	foreach ($parcours->getAll() as $p)
+	foreach ($parcours->getAll("ORDER BY type, distance") as $p)
 		$p->toForm();
 	
 	$new->toForm();

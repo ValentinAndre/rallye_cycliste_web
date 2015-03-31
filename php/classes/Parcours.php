@@ -23,14 +23,17 @@ class Parcours extends TableObject {
     	
     	if ($this->idParcours === DAO::UNKNOWN_ID)
     		echo '<button type="submit" class="icon-button" name="add[]">
-				  		<span class="glyphicon glyphicon-plus" aria-hidden="true"> </span>
-				  </button>';
+				  		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				  </button> 
+    			  <button class="icon-button">
+    					<span>&nbsp;&nbsp;&nbsp;</span>
+    			  </button>';
     	else
     		echo '<button type="submit" class="icon-button" name="modif[]">
-				  		<span class="glyphicon glyphicon-pencil" aria-hidden="true"> </span>
+				  		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 				  </button>
     			  <button type="submit" class="icon-button" name="supp[]">
-				  		<span class="glyphicon glyphicon-remove" aria-hidden="true"> </span>
+				  		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 				  </button>';
     	
     	echo '</div></form>';
