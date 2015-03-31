@@ -1,11 +1,28 @@
 <?php
 require_once ('php/session.php');
+function __autoload($class) {
+	require_once "php/classes/$class.php";
+}
+
+$stats = new Statistiques ( MaBD::getInstance () );
+$clubs = $stats->getClubs ();
+
+function afficher() {
+	global $clubs;
+	foreach ( $clubs as $c )
+		$c->toTableRow ();
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 		<?php require_once('php/head.php'); ?>
+		<script>
+			$(document).ready(function() {
+				$('table').tablesorter();
+			});
+		</script>
 <title>Clubs</title>
 </head>
 <body>
@@ -21,24 +38,17 @@ require_once ('php/session.php');
 				<table class="table table-bordered center-table">
 					<thead>
 						<tr class="sort-buttons">
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Nom</th>
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Prénom</th>
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Sexe</th>
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Date de naissance</th>
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Parcours</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Club</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Département</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Effectif</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Hommes</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Femmes</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Mineurs</th>
 						</tr>
 					</thead>
 					<tbody>
+						<?php afficher(); ?>
 					</tbody>
-					<tfoot>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</tfoot>
 				</table>
 			</div>
 		</div>
