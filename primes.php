@@ -20,25 +20,33 @@ require_once ('php/session.php');
 			<div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
 				<table class="table table-bordered center-table">
 					<thead>
-						<tr class="sort-buttons">
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Nom</th>
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Prénom</th>
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Sexe</th>
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Date de naissance</th>
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Parcours</th>
+						<tr>	
+							<th colspan="2">Récompenses</th>
+							<th>Nombre</th>					
 						</tr>
 					</thead>
 					<tbody>
-					</tbody>
-					<tfoot>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>Les plus nombreux</td>
 							<td></td>
 							<td></td>
 						</tr>
-					</tfoot>
+						<tr>
+							<td>Les plus nombreux d'Ardèche</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Les plus nombreux de Drôme</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Les deuxièmeplus nombreux</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 		</div>

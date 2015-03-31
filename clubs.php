@@ -37,13 +37,13 @@ function afficher() {
 			<div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
 				<table class="table table-bordered center-table">
 					<thead>
-						<tr class="sort-buttons">
+						<tr class="sort-buttons success">
 							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Club</th>
 							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Département</th>
 							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Effectif</th>
 							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Hommes</th>
 							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Femmes</th>
-							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>Mineurs</th>
+							<th><span class="glyphicon glyphicon-chevron-down">&nbsp;</span>- 18 ans</th>
 						</tr>
 					</thead>
 					<tbody>

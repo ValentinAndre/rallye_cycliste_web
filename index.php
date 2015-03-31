@@ -6,6 +6,10 @@ function __autoload($class) {
 	require_once "php/classes/$class.php";
 }
 
+/*
+ * on cache l'image et on affiche le tableau des statistiques
+ * si l'utilisateur est admin
+ */
 if ($_SESSION ['login'] === 'admin') {
 	$hide[0] = "hide";
 	$hide[1] = "";
@@ -14,21 +18,17 @@ if ($_SESSION ['login'] === 'admin') {
 	$hide[1] = "hide";
 }
 
-$connector = MaBD::getInstance();
-$mesStats = new Statistiques($connector);
+$stats = new Statistiques(MaBD::getInstance());
 
+/*
+ * Affiche les statistiques par parcours
+ * @param : un type de parcours
+ */
 function afficherStatsParcours($type){
-	global $mesStats;
-	$listeStats = $mesStats->getEffectifParParcours($type);
-	
-	foreach ($listeStats as $key => $value){
-		echo "<tr><td>".$key."km</td><td>".$value."</td></tr>";
-	}
-}
-
-function ObtenirNombreParticipants($complementRequete){
-	global $mesStats;
-	return $mesStats->getEffectif($complementRequete);
+	global $stats;
+	$effectif = $stats->getEffectifParParcours($type);
+	foreach ($effectif as $key => $value)
+		echo "<tr><td>", $key, "km</td><td>", $value, "</td></tr>";
 }
 ?>
 
@@ -53,23 +53,40 @@ function ObtenirNombreParticipants($complementRequete){
 				<img class="img-responsive center-block <?php echo $hide[0];?>" src="img/cycliste.png"
 					alt="cycliste">
 			<div class="<?php echo $hide[1];?>">
-			<table class="table table-condensed">
+			<div class="row">
+			<div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
+			<table class="table table-condensed font-3">
 				<thead>
-					<tr><th>Nombre de participants total inscrit</th><th><?php echo ObtenirNombreParticipants("");?></th></tr>
+					<tr class="success">
+						<th>TOTAL</th>
+						<th><?php echo $stats->getEffectif(); ?></th>
+					</tr>
 				</thead>
 			</table>
-			<table class="table table-condensed">
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-lg-offset-2 col-lg-4">
+			<table class="table table-condensed font-2">
 				<thead>
-					<tr><th colspan="2">Nombres d'inscrits sur les parcours VTT</th></tr>
+					<tr class="success"><th colspan="2">VTT</th></tr>
 				</thead>
 				<tbody>
 					<?php afficherStatsParcours("VTT");?>
 				</tbody>
-					<tr><th colspan="2">Nombres d'inscrits sur les parcours Route</th></tr>
+			</table>
+			</div>
+			<div class="col-lg-4">
+			<table class="table table-condensed font-2">
+			<thead>
+				<tr class="success"><th colspan="2">Route</th></tr>
+				</thead>
 				<tbody>
-					<?php afficherStatsParcours("Route");?>
+					<?php afficherStatsParcours("ROUTE"); ?>
 				</tbody>
 			</table>
+			</div>
+			</div>
 			</div>
 			</div>
 		</div>
