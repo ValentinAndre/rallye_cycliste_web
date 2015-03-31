@@ -1,36 +1,15 @@
 TODO:
 
-Implémenter la page des statistiques (stats.php) :
---> Créer une classe php pour les statistiques
+Divers :
+--> Diviser champs parcours en typpe et distance dans la page inscriptions
+--> Ajouter une animation lors du click sur les flèches de tri
+--> Stats sur la page d'accueil de l'admin
 
 Implémenter la page des utilisateurs (utilisateurs.php) :
 --> Vérifier existance d'une référence avant suppression
 --> Ajouter un utilisateur, modifier son mdp, supprimer un utilisateur
 --> Popup pour modification du mot de passe (bootstrap popup ?)
 
-Implémenter la page des parcours (parcours.php) :
---> Vérifier existance d'une référence avant suppression ou modification
---> Ajouter, modifier ou supprimer un parcours
---> S'inspirer du TP contact sous forme de tableau
---> Tout en php
-
 Implémenter la page de gestion de la base de données (bdd.php) :
 --> Vider les inscriptions (Confirmation avant suppression !)
 --> Importer les préinscriptions
-
-Statistiques générales:
-------------------------
-	- Répartition VTT/Route (PieChart)
-	- Répartition non licenciés, féminines, mineurs, FFCT, UFOLEP, FSGT, FFC (BarChart)
-	
-Statistiques Route et VTT:
---------------------------
-	- Répartition des participants par parcours (PieChart)
-	- Répartition des participants par club (PieChart)
-	
-	- 2 clubs les plus nombreux d'Ardèche (Table Row)
-	- 2 clubs les plus nombreux de Drôme (Table Row)
-	- Club avec le plus de filles (Table Row)
-	
-	- L'âge de la plus jeune participante (Table Row)
-	- L'âge du plus jeune participant (Table Row)
