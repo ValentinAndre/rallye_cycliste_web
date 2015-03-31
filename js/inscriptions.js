@@ -3,7 +3,7 @@
  */
 
 /* Déclaration des objets principaux */
-var federations = [ 'NL', 'FFCT', 'FFC', 'FSGT', 'UFOLEP' ];
+var federations = [ 'NL', 'FFCT', 'FFC', 'UFOLEP', 'FSGT', 'FFTri' ];
 var parcours = new TableauParcours();
 
 var info, erreur;
@@ -26,7 +26,7 @@ function addLine(inscription) {
 	tds.eq(4).text(inscription.federation);
 	tds.eq(5).text(inscription.clubOuVille);
 	tds.eq(6).text(inscription.departement);
-	tds.eq(7).text(parcours.getName(inscription.parcours-1));
+	tds.eq(7).text(parcours.getName(inscription.parcours));
 
 	// Paramétrage des boutons
 	var btns = tds.eq(8).children();

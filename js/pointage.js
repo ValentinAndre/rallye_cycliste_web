@@ -19,8 +19,8 @@ function addLine(inscription) {
 	tds.eq(1).text(inscription.prenom);
 	tds.eq(2).text(inscription.sexe);
 	tds.eq(3).text(inscription.dateNaissance);
-	tds.eq(4).text(parcours.getType(inscription.parcours - 1));
-	tds.eq(5).text(parcours.getDistance(inscription.parcours - 1));
+	tds.eq(4).text(parcours.getType(inscription.parcours));
+	tds.eq(5).text(parcours.getDistance(inscription.parcours));
 
 	if (inscription.estArrive == true) {
 		nouv.css('background-color', couleur);

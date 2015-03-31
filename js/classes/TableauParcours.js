@@ -28,39 +28,48 @@ function TableauParcours() {
 		// Méthodes //
 	
 	/*
-	 * Donne le nom d'un parcours à partir d'un indice
+	 * Donne le nom d'un parcours à partir d'un id
 	 * @param : un entier
 	 * @return : une chaine
 	 */
-	this.getName = function(indice) {
-		if (indice >= 0 && indice < this.parcours.length)
-			return this.parcours[indice].type + this.parcours[indice].distance;
-		else
-			return -1;
+	this.getName = function(id) {
+		var i = 0;
+		while (i < this.parcours.length) {
+			if (this.parcours[i].idParcours == id)
+				return this.parcours[i].type + this.parcours[i].distance;
+			i++; 
+		}
+		return -1;
 	}
 	
 	/*
-	 * Donne le type d'un parcours à partir d'un indice
+	 * Donne le type d'un parcours à partir d'un id
 	 * @param : un entier
 	 * @return : une chaine
 	 */
-	this.getType = function(indice) {
-		if (indice >= 0 && indice < this.parcours.length)
-			return this.parcours[indice].type;
-		else
-			return -1;
+	this.getType = function(id) {
+		var i = 0;
+		while (i < this.parcours.length) {
+			if (this.parcours[i].idParcours == id)
+				return this.parcours[i].type;
+			i++;
+		}
+		return -1;
 	}
 	
 	/*
-	 * Donne la distance d'un parcours à partir d'un indice
+	 * Donne la distance d'un parcours à partir d'un id
 	 * @param : un entier
 	 * @return : un entier
 	 */
-	this.getDistance = function(indice) {
-		if (indice >= 0 && indice < this.parcours.length)
-			return this.parcours[indice].distance;
-		else
-			return -1;
+	this.getDistance = function(id) {
+		var i = 0;
+		while (i < this.parcours.length) {
+			if (this.parcours[i].idParcours == id)
+				return this.parcours[i].distance;
+			i++;
+		}
+		return -1;
 	}
 	
 	/*
