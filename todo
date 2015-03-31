@@ -1,11 +1,10 @@
 TODO:
 
 Divers :
---> Diviser champs parcours en typpe et distance dans la page inscriptions
---> Ajouter une animation lors du click sur les flèches de tri
---> Stats sur la page d'accueil de l'admin
 --> Impression stats
 --> Format date naissance
+--> Utiliser bootstrap pour le tri avec bibliothèque datatable (jquery)
+--> Pb th/td dans stats parcours (participation.php)
 
 Implémenter la page des utilisateurs (utilisateurs.php) :
 --> Vérifier existance d'une référence avant suppression
