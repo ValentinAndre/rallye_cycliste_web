@@ -48,8 +48,8 @@ function afficherLesPlusJeunes($type, $sexe) {
 		</div>
 		<div class="row">
 			<div class="col-lg-offset-1 col-lg-5">
-				<table class="table table-striped">
-					<caption>ROUTE</caption>
+				<table class="table table-condensed">
+					<caption class="font-2">ROUTE</caption>
 					<thead>
 						<tr>	
 							<th>Récompenses</th>
@@ -86,8 +86,8 @@ function afficherLesPlusJeunes($type, $sexe) {
 				</table>
 				</div>
 				<div class="col-lg-5">
-				<table class="table table-striped">
-					<caption>VTT</caption>
+				<table class="table table-condensed">
+					<caption class="font-2">VTT</caption>
 					<thead>
 						<tr>	
 							<th>Récompenses</th>
