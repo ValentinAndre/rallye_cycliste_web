@@ -4,6 +4,5 @@
 <link href="css/main.css" rel="stylesheet"/>
 <script src="js/libraries/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="js/libraries/chart.min.js"></script>
 <script src="js/libraries/tablesorter.min.js"></script>
 <script src="js/classes/TableauParcours.js"></script>
