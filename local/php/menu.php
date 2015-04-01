@@ -21,6 +21,7 @@ function hideMenu() {
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="inscriptions.php">Inscriptions</a></li>
+				<li><a href="preinscriptions.php">Pré-Inscriptions</a></li>
 				<li><a href="pointage.php">Pointage</a></li>				
 				<li class="dropdown"><a href="#"
 					class="dropdown-toggle" data-toggle="dropdown" role="button"

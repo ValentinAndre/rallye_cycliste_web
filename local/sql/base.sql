@@ -1,4 +1,6 @@
-﻿/* Création de la base de données */
+﻿/* 
+ * CREATION DE LA BASE DE DONNEES
+ */
 
 CREATE TABLE UTILISATEURS (
 	login VARCHAR (50) UNIQUE NOT NULL,
@@ -24,11 +26,24 @@ CREATE TABLE INSCRIPTIONS (
 	clubOuVille VARCHAR (40),
 	departement INT,
 	parcours int(11) NOT NULL,
-	inscriveur VARCHAR (50) NOT NULL,
+	inscriveur VARCHAR (50),
 	PRIMARY KEY (idInscription)
 ) ENGINE=InnoDB;
 
-/* TODO : Créer une table fédération pour liste déroulante ! */
+CREATE TABLE PREINSCRIPTIONS (
+	idPreInscription int(11) NOT NULL AUTO_INCREMENT,
+	estArrive BOOLEAN NOT NULL,
+	nom VARCHAR(30),
+	prenom VARCHAR(30),
+	sexe CHAR(1),
+	dateNaissance DATE,
+	federation VARCHAR (6),
+	clubOuVille VARCHAR (40),
+	departement INT,
+	parcours int(11) NOT NULL,
+	inscriveur VARCHAR (50) NOT NULL,
+	PRIMARY KEY (idPreInscription)
+) ENGINE=InnoDB;
 
 ALTER TABLE INSCRIPTIONS
   ADD CONSTRAINT inscription_1 FOREIGN KEY (parcours) REFERENCES PARCOURS (idParcours),

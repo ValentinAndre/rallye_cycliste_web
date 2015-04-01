@@ -58,7 +58,7 @@ function afficherStatsParcours($type){
 			<table class="table table-condensed font-3">
 				<thead>
 					<tr class="success">
-						<th>TOTAL</th>
+						<th><span class="glyphicon glyphicon-signal">&nbsp;</span>TOTAL</th>
 						<th><?php echo $stats->getEffectif(); ?></th>
 					</tr>
 				</thead>
@@ -69,7 +69,8 @@ function afficherStatsParcours($type){
 			<div class="col-lg-offset-2 col-lg-4">
 			<table class="table table-condensed font-2">
 				<thead>
-					<tr class="success"><th colspan="2">VTT</th></tr>
+					<tr class="success"><th colspan="2"><span class="glyphicon glyphicon-chevron-right">&nbsp;</span>
+					VTT</th></tr>
 				</thead>
 				<tbody>
 					<?php afficherStatsParcours("VTT");?>
@@ -79,7 +80,8 @@ function afficherStatsParcours($type){
 			<div class="col-lg-4">
 			<table class="table table-condensed font-2">
 			<thead>
-				<tr class="success"><th colspan="2">Route</th></tr>
+				<tr class="success"><th colspan="2"><span class="glyphicon glyphicon-chevron-right">&nbsp;</span>
+				Route</th></tr>
 				</thead>
 				<tbody>
 					<?php afficherStatsParcours("ROUTE"); ?>
